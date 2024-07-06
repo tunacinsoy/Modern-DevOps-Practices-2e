@@ -6,4 +6,4 @@ RUN GO111MODULE=off GOOS=linux go build -a -installsuffix cgo -o app . && chmod 
 FROM gcr.io/distroless/base
 WORKDIR /tmp
 COPY --from=build /tmp/app .
-CMD ["./app"]
+ENTRYPOINT ["./app"]

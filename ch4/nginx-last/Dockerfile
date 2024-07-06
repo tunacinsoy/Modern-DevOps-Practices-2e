@@ -1,6 +1,5 @@
 FROM ubuntu:bionic
-RUN apt update && apt install -y curl
-RUN apt update && apt install -y nginx
+RUN apt update && apt install -y curl nginx
 
 WORKDIR /var/www/html/
 ADD index.html ./

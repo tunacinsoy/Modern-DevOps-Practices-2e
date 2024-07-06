@@ -3,7 +3,7 @@ WORKDIR /tmp
 COPY app.go .
 RUN GO111MODULE=off GOOS=linux go build -a -installsuffix cgo -o app . && chmod +x ./app
 
-FROM alpine:3.18.0
+FROM alpine
 WORKDIR /tmp
 COPY --from=build /tmp/app .
-CMD ["./app"]
+ENTRYPOINT ["./app"]
