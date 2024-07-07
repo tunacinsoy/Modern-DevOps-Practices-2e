@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - image: nginx
-    imagePullPolicy: Always
+    imagePullPolicy: IfNotPresent
     name: nginx
     resources:
       limits:
@@ -35,4 +35,4 @@ spec:
         port: 80
       initialDelaySeconds: 5
       periodSeconds: 3
-  restartPolicy: Always
+  restartPolicy: OnFailure
