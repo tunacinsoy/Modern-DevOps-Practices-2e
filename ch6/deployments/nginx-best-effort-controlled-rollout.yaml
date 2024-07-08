@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: nginx-deployment
   labels:
     app: nginx
-  name: nginx
 spec:
-  replicas: 10
+  replicas: 3
   selector:
     matchLabels:
       app: nginx
-  strategy: 
+  strategy:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 0
@@ -20,5 +20,5 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: nginx
-        name: nginx
+      - name: nginx
+        image: nginx:latest
