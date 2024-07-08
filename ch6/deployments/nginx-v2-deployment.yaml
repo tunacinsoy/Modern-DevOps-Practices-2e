@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment-version-two
+  labels:
+    app: nginx-version-two
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-version-two
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: nginx-version-two
+    spec:
+      containers:
+      - name: nginx-version-two
+        image: bharamicrosystems/nginx:v2
