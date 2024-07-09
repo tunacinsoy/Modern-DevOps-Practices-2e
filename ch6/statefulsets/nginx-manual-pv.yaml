@@ -11,4 +11,3 @@ spec:
     - ReadWriteOnce
   gcePersistentDisk:
     pdName: nginx-manual
-    fsType: ext4

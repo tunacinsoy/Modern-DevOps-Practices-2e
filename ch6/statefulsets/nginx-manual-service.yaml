@@ -5,9 +5,10 @@ metadata:
   labels:
     app: nginx-manual
 spec:
+  clusterIP: None
   ports:
   - port: 80
-    name: web
-  clusterIP: None
+    protocol: TCP
+    targetPort: 80
   selector:
     app: nginx-manual
