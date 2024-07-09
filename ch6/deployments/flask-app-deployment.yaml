@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: flask-app
   labels:
-    app: nginx
+    app: flask-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: flask-app
   template:
     metadata:
       labels:
-        app: nginx
+        app: flask-app
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: flask-app
+        image: tunacinsoy/ch3-flask-redis:latest
         resources:
           limits:
             cpu: 200m

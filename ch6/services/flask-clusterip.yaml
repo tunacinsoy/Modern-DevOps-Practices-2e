@@ -11,4 +11,4 @@ spec:
     protocol: TCP
     targetPort: 5000
   selector:
-    run: flask-app
+    app: flask-app
