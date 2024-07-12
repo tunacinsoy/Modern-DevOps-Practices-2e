@@ -6,4 +6,4 @@ spec:
   template:
     spec:
       containers:
-        - image: <your_dockerhub_user>/py-time
+        - image: tunacinsoy/py-time

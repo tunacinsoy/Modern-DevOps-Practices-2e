@@ -1,1 +1,3 @@
 ch3/docker-compose/venv/*
+ch7/knative/venv/*
+ch8-terraform/az_sp_terraform.json
