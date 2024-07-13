@@ -32,4 +32,7 @@ variable "rg_name" {
 variable "rg_location" {
   type        = string
   description = "Resource Group Location for resource 'rg'"
+  # In terms of latency, the minimum value is obtained from here.
+  # Check https://www.azurespeed.com/Azure/Latency
+  default = "Germany West Central"
 }

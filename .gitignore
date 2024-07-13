@@ -5,6 +5,13 @@ ch7/knative/venv/*
 # Credentials for the service principal resource
 ch8-terraform/az_sp_terraform.json
 
-# Terraform variable values and provider binary downloaded after terraform init
+# Terraform variable values and provider binary downloaded after 'terraform init'
 *.tfvars
 .terraform*
+
+# Terraform detailed execution plan binary after running 'terraform plan'
+*.tfplan
+
+# Terraform tfstate files
+*.tfstate
+*.tfstate.backup
