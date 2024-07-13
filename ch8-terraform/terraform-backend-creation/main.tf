@@ -23,7 +23,7 @@ module "rg" {
 module "storage" {
   source = "./modules/storage_account"
   # Storage name has to be unique, so we need to add random suffix at the end
-  name = "${var.storage_name_prefix}_${random_string.suffix.result}"
+  name = "${var.storage_name_prefix}${random_string.suffix.result}"
   # We can get the values of following two parameters from the output of rg module
   resource_group_name      = module.rg.resource_group_name
   location                 = module.rg.resource_group_location

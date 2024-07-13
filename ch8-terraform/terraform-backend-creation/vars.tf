@@ -61,6 +61,8 @@ variable "account_replication_type" {
 # Needed for module "storage"
 resource "random_string" "suffix" {
   length  = 8
+  # Storage account nme can only consist of lowercase letters and numbers,
+  # and must be between 3 and 24 characters long
   special = false
   upper   = false
 }
