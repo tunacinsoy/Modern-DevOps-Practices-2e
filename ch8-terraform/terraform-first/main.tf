@@ -1,8 +1,9 @@
 terraform {
   required_providers {
     azurerm = {
-      source  = "azurerm"
-      version = "=3.55.0"
+      source = "azurerm"
+      # If we state the version like this '~>', terraform will use the latest version that is lower than 4.0 (Right now, it is 3.112.0)
+      version = "~> 3.0"
     }
   }
 }

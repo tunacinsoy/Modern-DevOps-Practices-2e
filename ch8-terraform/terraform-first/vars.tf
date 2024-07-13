@@ -1,30 +1,35 @@
+# Needed for provider "azurerm"
 variable "subscription_id" {
   type        = string
-  description = "The azure subscription id"
+  description = "Azure Subscription ID"
 }
 
+# Needed for provider "azurerm"
 variable "app_id" {
   type        = string
-  description = "The azure service principal appId"
+  description = "Azure Service Principal appId"
 }
 
+# Needed for provider "azurerm"
 variable "password" {
   type        = string
-  description = "The azure service principal password"
+  description = "Azure Service Principal Password"
   sensitive   = true
 }
 
+# Needed for provider "azurerm"
 variable "tenant" {
   type        = string
-  description = "The azure tenant id"
+  description = "Azure Tenant ID"
 }
 
+# Needed for resource "azurerm_resource_group" "rg"
 variable "rg_name" {
   type        = string
-  description = "The resource group name"
+  description = "Resource Group Name for resource 'rg'"
 }
-
+# Needed for resource "azurerm_resource_group" "rg"
 variable "rg_location" {
   type        = string
-  description = "The resource group location"
+  description = "Resource Group Location for resource 'rg'"
 }
