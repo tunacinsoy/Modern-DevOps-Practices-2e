@@ -37,3 +37,42 @@ variable "rg_location" {
   # Check https://www.azurespeed.com/Azure/Latency
   default = "Germany West Central"
 }
+
+# Needed for module "storage"
+variable "storage_name_prefix" {
+  type        = string
+  description = "Prefix of Storage Account Name, Suffix will be generated in main.tf"
+}
+
+# Needed for module "storage"
+variable "account_tier" {
+  type        = string
+  description = "Type of Storage Account"
+  default     = "Standard"
+}
+
+# Needed for module "storage"
+variable "account_replication_type" {
+  type        = string
+  description = "Account Replication for Data Redundancy"
+  default     = "LRS"
+}
+
+# Needed for module "storage"
+resource "random_string" "suffix" {
+  length  = 8
+  special = false
+  upper   = false
+}
+
+# Needed for module "container"
+variable "container_name" {
+  type        = string
+  description = "Container Name"
+}
+
+# Needed for module "container"
+variable "container_access_type" {
+  type        = string
+  description = "Container Access Type"
+}
