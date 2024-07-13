@@ -1,30 +1,30 @@
 variable "subscription_id" {
   type        = string
-  description = "The azure subscription id"
+  description = "Azure Subscription ID"
 }
 
 variable "app_id" {
   type        = string
-  description = "The azure service principal appId"
+  description = "Azure Service Principal appId"
 }
 
 variable "password" {
   type        = string
-  description = "The azure service principal password"
+  description = "Azure Service Principal Password"
   sensitive   = true
 }
 
 variable "tenant" {
   type        = string
-  description = "The azure tenant id"
+  description = "Azure Tenant ID"
 }
 
 variable "rg_name" {
   type        = string
-  description = "The resource group name"
+  description = "Resource Group Name"
 }
 
 variable "rg_location" {
   type        = string
-  description = "The resource group location"
+  description = "Resource Group Location"
 }

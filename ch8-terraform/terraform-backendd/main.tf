@@ -2,7 +2,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "azurerm"
-      version = "=3.55.0"
+      version = "~> 3.0"
     }
   }
 }
@@ -14,7 +14,8 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "rg" {
+module "rg" {
+  source   = "./modules/resource_group"
   name     = var.rg_name
   location = var.rg_location
 }
