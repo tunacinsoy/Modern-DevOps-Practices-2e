@@ -26,12 +26,12 @@ variable "tenant" {
 # Needed for resource "azurerm_resource_group" "rg"
 variable "rg_name" {
   type        = string
-  description = "Resource Group Name for resource 'rg'"
+  description = "Resource Group Name for resource 'azurerm_resource_group.rg'"
 }
 # Needed for resource "azurerm_resource_group" "rg"
 variable "rg_location" {
   type        = string
-  description = "Resource Group Location for resource 'rg'"
+  description = "Resource Group Location for resource 'azurerm_resource_group.rg'"
   # In terms of latency, the minimum value is obtained from here.
   # Check https://www.azurespeed.com/Azure/Latency
   default = "Germany West Central"
