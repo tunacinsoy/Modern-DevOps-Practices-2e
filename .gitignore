@@ -1,8 +1,9 @@
 # venv was created to run the python app locally
-ch3/docker-compose/venv/*
-ch7/knative/venv/*
+ch3-docker-compose/docker-compose/venv/*
+ch7-ecs-knative/knative/venv/*
+ch7-ecs-knative/knative/__pycache__/*
 
-# Credentials for the service principal resource
+#Credentials for the service principal resource
 ch8-terraform/az_sp_terraform.json
 
 # Terraform variable values and provider binary downloaded after 'terraform init'
