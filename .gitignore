@@ -16,3 +16,4 @@ ch8-terraform/az_sp_terraform.json
 # Terraform tfstate files
 *.tfstate
 *.tfstate.backup
+*.tfstate.*
