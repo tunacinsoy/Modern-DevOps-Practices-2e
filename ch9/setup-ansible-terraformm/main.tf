@@ -1,3 +1,5 @@
+# To-Do: Make the main.tf reusable as much as possible (get vars from vars.tf file for
+# web and db nodes as well)
 terraform {
   required_providers {
     azurerm = {

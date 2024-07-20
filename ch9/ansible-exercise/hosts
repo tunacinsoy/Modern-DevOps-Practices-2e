@@ -1,6 +1,12 @@
+# Defines a group name to organize hosts which have similar function
 [webservers]
+# 'web' is the inventory name of the host. We can refer to this host in playbooks and tasks using this name. 'ansible_host=web' actual hostname or the IP address of the host.
 web ansible_host=web
+# Defines a group name to organize hosts which have similar function
 [dbservers]
+# 'db' is the inventory name of the host. We can refer to this host in playbooks and tasks using this name. 'ansible_host=db' actual hostname or the IP address of the host.
 db ansible_host=db
+# This will be applied to all hosts. Defines variables that are applicable to all hosts.
 [all:vars]
+# Sets the python interpreter to python3 for all hosts.
 ansible_python_interpreter=/usr/bin/python3

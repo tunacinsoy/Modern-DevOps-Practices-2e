@@ -1,10 +1,7 @@
 # venv was created to run the python app locally
-ch3-docker-compose/docker-compose/venv/*
-ch7-ecs-knative/knative/venv/*
-ch7-ecs-knative/knative/__pycache__/*
-
-#Credentials for the service principal resource
-ch8-terraform/az_sp_terraform.json
+venv/*
+__pycache__/*
+*.pyc
 
 # Terraform variable values and provider binary downloaded after 'terraform init'
 *.tfvars
@@ -17,3 +14,6 @@ ch8-terraform/az_sp_terraform.json
 *.tfstate
 *.tfstate.backup
 *.tfstate.*
+
+# json files contain credentials for service account on gcp or service principal on azure
+*.json
