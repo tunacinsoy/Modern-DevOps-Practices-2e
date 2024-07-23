@@ -16,7 +16,7 @@ jenkins:
         - "Overall/Read:authenticated"
   clouds:
     - kubernetes:
-        serverUrl: "<server_url>"
+        serverUrl: "<control_plane_ip_addr>"
         skipTlsVerify: false
         useJenkinsProxy: false
         jenkinsUrl: "http://jenkins-service:8080"
