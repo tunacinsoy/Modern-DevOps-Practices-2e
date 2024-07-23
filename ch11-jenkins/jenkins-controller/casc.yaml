@@ -1,37 +1,56 @@
+# casc refers to "Configuration-as-Code"
 jenkins:
+  # System message that will welcome users on Jenkins Web UI
   systemMessage: "Welcome to Jenkins!"
+  # We want 0 executions on controller, and all of them should be on agents
   numExecutors: 0
+  # The communication between controller and agents should be secure
   remotingSecurity:
     enabled: true
   securityRealm:
     local:
+      # There is not any option to signup, new users should be created manually by admin
       allowsSignup: false
       users:
+        # Creating single user with id and password
         - id: ${JENKINS_ADMIN_ID}
           password: ${JENKINS_ADMIN_PASSWORD}
   authorizationStrategy:
     globalMatrix:
       permissions:
+        # Admin will have administrator privileges
         - "Overall/Administer:admin"
+        # All authenticated non-admin users will have read privileges
         - "Overall/Read:authenticated"
   clouds:
+    # Installing kubernetes plugin so that jenkins controller will be able to create agents for builds as Kubernetes pods
     - kubernetes:
+        # The control plane IP of cluster. Use `kubectl cluster-info | grep "control plane"` for retrieval.
+        # Jenkins will be able communicate with Kubernetes API server.
         serverUrl: "<control_plane_ip_addr>"
         skipTlsVerify: false
         useJenkinsProxy: false
+        # Jenkins controller URL. Jenkins controller pods will be exposed using load-balancer type of service, and since we have
+        # already planned which ports will be exposed, we are defining them in here
         jenkinsUrl: "http://jenkins-service:8080"
+        # As the JNLP port uses 50000, this is the description how agent pods will connect to jenkins controller
         jenkinsTunnel: "jenkins-service:50000"
         maxRequestsPerHost: 32
         name: "kubernetes"
         readTimeout: 15
+        # Pod labels for agent pods
         podLabels:
           - key: jenkins
             value: agent
         templates:
+          # Template definition for the creation of agent pods
           - name: "jenkins-agent"
             label: "jenkins-agent"
+            # We do not want agent pods to interact with the host network
+            # Even with hostNetwork: false, agent pods can communicate with the Jenkins controller pod using Kubernetes services and the cluster’s internal DNS
             hostNetwork: false
             nodeUsageMode: "NORMAL"
+            # serviceAccounts provide identity to applications running within pods, allowing them to interact with the Kubernetes API securely and with controlled permissions
             serviceAccount: "jenkins"
             imagePullSecrets:
               - name: regcred
