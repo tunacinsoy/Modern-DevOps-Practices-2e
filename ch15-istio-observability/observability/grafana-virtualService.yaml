@@ -1,0 +1,18 @@
+# This file is responsible for enabling access to kiali dashboard from outside of the cluster
+
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata:
+  name: grafana
+  namespace: istio-system  # VirtualService is in istio-system namespace
+spec:
+  hosts:
+  - "grafana.magdalani.com"
+  gateways:
+  - blog-app/blog-app-gateway  # Reference the Gateway with namespace
+  http:
+  - route:
+    - destination:
+        host: grafana # They are in the same namespace, so using only name would be fine. otherwise, we would've said: `grafana.istio-system.svc.cluster.local`
+        port:
+          number: 3000

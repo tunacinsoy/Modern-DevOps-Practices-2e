@@ -7,7 +7,7 @@ metadata:
     component: "server"
     app: prometheus
     release: prometheus
-    chart: prometheus-19.6.1
+    chart: prometheus-25.27.0
     heritage: Helm
   name: prometheus
   namespace: istio-system
@@ -22,7 +22,7 @@ metadata:
     component: "server"
     app: prometheus
     release: prometheus
-    chart: prometheus-19.6.1
+    chart: prometheus-25.27.0
     heritage: Helm
   name: prometheus
   namespace: istio-system
@@ -347,7 +347,7 @@ metadata:
     component: "server"
     app: prometheus
     release: prometheus
-    chart: prometheus-19.6.1
+    chart: prometheus-25.27.0
     heritage: Helm
   name: prometheus
 rules:
@@ -389,7 +389,7 @@ metadata:
     component: "server"
     app: prometheus
     release: prometheus
-    chart: prometheus-19.6.1
+    chart: prometheus-25.27.0
     heritage: Helm
   name: prometheus
 subjects:
@@ -409,7 +409,7 @@ metadata:
     component: "server"
     app: prometheus
     release: prometheus
-    chart: prometheus-19.6.1
+    chart: prometheus-25.27.0
     heritage: Helm
   name: prometheus
   namespace: istio-system
@@ -434,7 +434,7 @@ metadata:
     component: "server"
     app: prometheus
     release: prometheus
-    chart: prometheus-19.6.1
+    chart: prometheus-25.27.0
     heritage: Helm
   name: prometheus
   namespace: istio-system
@@ -454,9 +454,9 @@ spec:
         component: "server"
         app: prometheus
         release: prometheus
-        chart: prometheus-19.6.1
+        chart: prometheus-25.27.0
         heritage: Helm
-        
+
         sidecar.istio.io/inject: "false"
     spec:
       enableServiceLinks: true
