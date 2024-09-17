@@ -2,6 +2,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "azurerm"
+      # Following line allows Terraform to use any version >= 3.0 but < 4.0. It means Terraform can update to versions like 3.0.1, 3.0.2, 3.1.0 etc., but it will not use 4.0 or higher.
       version = "~> 3.0"
     }
   }
